@@ -2,11 +2,12 @@ body {
     margin: 0;
     align-content: center;
     text-align: center;
-    --background-color: #e0dbcd;
     h1 {
         font-family: "Times New Roman", cursive;
         font-size: 5vw;
         color: white;
+        word-wrap: break-word;
+        white-space: normal;
     }
     h2 {
         font-family: "Marck Script", cursive;
@@ -66,12 +67,32 @@ body {
     }
 }
 
+#article {
+    position: relative;
+    z-index: 10;
+}
+
+#main-heading {
+    width: 100%;
+    position: fixed;
+    z-index: 0;
+    align-content: center;
+    text-align: center;
+}
+
 /* For the width of the original background image and smaller: */
 @media only screen and (max-width: 837px) {
     .background {
       background-size: contain;
       background-position: top;
       height: 120vw;
+      .cover-text {
+          #main-heading{
+             h1 {
+              font-size: 15vw;
+            } 
+          }
+      }
     }
 }
   
