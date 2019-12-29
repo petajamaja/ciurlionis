@@ -1,3 +1,80 @@
-* {
-    background-color: #f0f0e8;
+body {
+    margin: 0;
+    align-content: center;
+    text-align: center;
+    --background-color: #e0dbcd;
+    h1 {
+        font-family: "Times New Roman", cursive;
+        font-size: 5vw;
+        color: white;
+    }
+    h2 {
+        font-family: "Marck Script", cursive;
+    }
+    p {
+        font-size: 30px;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+        max-height: 120px;
+        overflow: hidden;
+        a {
+            height: 100%;
+            font-size: 2em;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #25515b;
+            text-decoration: none;
+            font-style: italic;
+        }
+    }
+}
+
+.crop {
+    max-height: inherit;
+    overflow: hidden;
+    #signature {
+      max-height: initial;
+      margin-top: -90px;
+      max-width: 30em;
+    }
+}
+
+.initial {
+    width: 5em;
+    height: 5em;
+    padding: 0 15px;
+    float: left;
+}
+  
+.background {
+
+    position: relative;
+    top: hidden;
+    height: 1000px;
+    width:100%;
+    background: url('../img/Zodiakas.jpg') center center no-repeat;
+    background-size: cover;
+
+    .cover-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    }
+}
+  
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80em;
+}
+  
+#container {
+    float: left;
+    padding: 1em;
+    width: 100%;
 }
