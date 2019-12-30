@@ -20,7 +20,7 @@ body {
         justify-content: center;
         max-height: 120px;
         overflow: hidden;
-        a {
+        a .text {
             height: 100%;
             font-size: 2em;
             margin-top: auto;
@@ -104,9 +104,8 @@ body {
     }
 }
 
-@media only screen and (max-width: 745px){
+@media only screen and (max-width: 1025px){
     header {
-
         #signature {
             display: none;
         }
