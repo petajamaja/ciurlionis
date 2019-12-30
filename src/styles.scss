@@ -42,6 +42,10 @@ body {
     }
 }
 
+#slash {
+    display: none;
+}
+
 .initial {
     width: 5em;
     height: 5em;
@@ -72,6 +76,10 @@ body {
     z-index: 10;
 }
 
+#signature-heading {
+    display: none;
+}
+
 #main-heading {
     width: 100%;
     position: fixed;
@@ -93,6 +101,36 @@ body {
             } 
           }
       }
+    }
+}
+
+@media only screen and (max-width: 745px){
+    header {
+
+        #signature {
+            display: none;
+        }
+        #slash {
+            display: block;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        a { 
+            height: 100%;
+            font-size: 2em;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #25515b;
+            text-decoration: none;
+            font-style: italic;
+        }
+    }
+
+    #signature-heading {
+        display: inline-block;
+        max-height: initial;
+        margin-top: -90px;
+        max-width: 30em;
     }
 }
   
