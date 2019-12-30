@@ -2,6 +2,7 @@ body {
     margin: 0;
     align-content: center;
     text-align: center;
+
     h1 {
         font-family: "Times New Roman", cursive;
         font-size: 5vw;
@@ -13,8 +14,11 @@ body {
         font-family: "Marck Script", cursive;
     }
     p {
-        font-size: 3vh;
+        font-size: 1.5em;
         text-align: justify;
+        &.top{
+            margin-top: 20px;
+        }
     }
     header {
         display: flex;

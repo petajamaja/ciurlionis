@@ -1,7 +1,7 @@
 {
   "name": "tribute-page-ciurlionis",
   "version": "1.0.0",
-  "description": " A project for Free Code Camp certification in responsive web design.",
+  "description": "A project for Free Code Camp certification in responsive web design.",
   "main": "src/index.js",
   "scripts": {
     "test": "test",
