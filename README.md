@@ -51,7 +51,7 @@ To learn more about Čiurlionis, please take a look at the official website (not
 
     Modern day programming is different from its predecessor, because we moved from inventing everything on our own to simply researching how to make something and customizing it/applying it to our goal. Most of the things that are beautiful have been already created by someone else. Since I really wanted to have my first website adhere to modern web design standards, I had to find inspiration somewhere. So in this section I am mentioning other people's codepens that I incorporated into my first site (and played with to make them somewhat different and fitting to my purpose). In this section I give well-deserved credit to those authors.
 
-+ [Animated arrow button](https://codepen.io/nicoencarnacion/pen/XpaRQV) created by [Nico Encarnacion](@https://codepen.io/nicoencarnacion) - I also modified the code to change its direction to its mirror image as I needed both directions;
++ [Animated arrow button](https://codepen.io/nicoencarnacion/pen/XpaRQV) created by [Nico Encarnacion](https://codepen.io/nicoencarnacion) - I also modified the code to change its direction to its mirror image as I needed both directions;
 
 + [Book layout](https://codepen.io/erinesullivan/pen/gxdbzp) created by [Erin E. Sullivan](https://codepen.io/erinesullivan) - I found it to be the most realistic and minimalistic skeuomorph of a book out there that fit nicely for the concept of this tribute page;
 
