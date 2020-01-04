@@ -35,6 +35,41 @@ body {
             font-style: italic;
         }
     }
+
+    #links {
+        background-color: #D6CDB9;
+        min-height: 100px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        a {
+            font-size: 2em;
+            line-height:100px; 
+            text-decoration: none;
+            color: #25515b;
+        } 
+        a:hover {
+            color: white;
+        }
+    }
+
+    footer {
+        background-color: #25515b;
+        min-height: 50px;
+        color: white;
+        align-content: center;
+        text-align: center;
+        p {
+            font-size: 15px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        #text {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
 }
 
 .crop {
