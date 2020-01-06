@@ -8,7 +8,7 @@
 
 <body>
     <header id="header">
-        <a class="arrow-art animated-arrow" href="https://google.com" target="_blank;">
+        <a id="arrow-art" class="arrow-art animated-arrow" onclick="makeVisible('art');">
             <span class='main'>
                 <span class='the-arrow -left'>
                     <span class='shaft'></span>
@@ -25,7 +25,7 @@
             <img id="signature" src="../img/Signature_Teal.jpg" />
         </div>
         <p id="slash">|</p>
-        <a class="arrow-music animated-arrow" href="https://google.com" target="_blank;">
+        <a id="arrow-music" class="arrow-music animated-arrow" onclick="makeVisible('music');">
             <span class='the-arrow -left'>
                 <span class='shaft'></span>
             </span>
@@ -40,99 +40,203 @@
         </a>
     </header>
     <main id="main">
-        <div class="background">
-            <div class="cover-text">
-                <div id="main-heading">
-                    <h1>Mikalojus Konstantinas Čiurlionis</h1>
-                    <img id="signature-heading" src="../img/Signature_White.png">
+        <div id="content-slider">
+            <div id="init">
+                <div class="background">
+                    <div class="cover-text">
+                        <div id="main-heading">
+                            <h1>Mikalojus Konstantinas Čiurlionis</h1>
+                            <img id="signature-heading" src="../img/Signature_White.png">
+                        </div>
+                    </div>
+                </div>
+                <article id="article">
+                    <section id="tribute-info">
+                        <p class="top"><img class="initial" alt="Initial A drawn by Čiurlionis"
+                                src="../img/Initial_A.jpg" />Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do
+                            eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt
+                            mollit anim id
+                            est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt
+                            mollit anim id
+                            est laborum.</p>
+                        <div class="delimiter">* * *</div>
+                        <p><img class="initial" alt="Initial M drawn by Čiurlionis"
+                                src="../img/Initial_M.jpg" />ikalojus
+                            Konstantinas Čiurlionis Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud
+                            exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in
+                            voluptate velit
+                            esse cillum dolore eu fugiat
+                            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia
+                            deserunt mollit anim
+                            id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt
+                            mollit anim id
+                            est laborum.</p>
+                        <div class="delimiter">* * *</div>
+                        <p><img class="initial" alt="Initial T drawn by Čiurlionis" src="../img/Initial_T.jpg" />Lorem
+                            ipsum
+                            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip
+                            ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt
+                            mollit anim id
+                            est laborum.</p>
+                        <div class="delimiter">* * *</div>
+                        <p><img class="initial" alt="Initial T drawn by Čiurlionis" src="../img/Initial_K.jpg" />Lorem
+                            ipsum
+                            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip
+                            ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt
+                            mollit anim id
+                            est laborum.</p>
+                    </section>
+                </article>
+            </div>
+            <div id="music">
+                <div class="side-panel-header">
+                    <a onclick="hide('music')">Go back</a>
+                </div>
+                <div id="music-content">
+                    <article>
+                        <p>Lorem
+                            ipsum
+                            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip
+                            ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt
+                            mollit anim id
+                            est laborum.</p>
+                    </article>
+                </div>
+            </div>
+            <div id="art">
+                <div class="side-panel-header">
+                    <a onclick="hide('art')">Go back</a>
+                </div>
+                <div id="art-content">
+                    <article>
+                        <p>Lorem
+                            ipsum
+                            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip
+                            ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu
+                            fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt
+                            mollit anim id
+                            est laborum.</p>
+                    </article>
                 </div>
             </div>
         </div>
-        <article id="article">
-            <section id="tribute-info">
-                <p class="top"><img class="initial" alt="Initial A drawn by Čiurlionis"
-                        src="../img/Initial_A.jpg" />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco
-                    laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit anim id
-                    est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco
-                    laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit anim id
-                    est laborum.</p>
-                <div class="delimiter">* * *</div>
-                <p><img class="initial" alt="Initial M drawn by Čiurlionis" src="../img/Initial_M.jpg" />ikalojus
-                    Konstantinas Čiurlionis Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit
-                    esse cillum dolore eu fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim
-                    id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco
-                    laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit anim id
-                    est laborum.</p>
-                <div class="delimiter">* * *</div>
-                <p><img class="initial" alt="Initial T drawn by Čiurlionis" src="../img/Initial_T.jpg" />Lorem ipsum
-                    dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco
-                    laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit anim id
-                    est laborum.</p>
-                <div class="delimiter">* * *</div>
-                <p><img class="initial" alt="Initial T drawn by Čiurlionis" src="../img/Initial_K.jpg" />Lorem ipsum
-                    dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco
-                    laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit anim id
-                    est laborum.</p>
-            </section>
-        </article>
+    </main>
+    <footer>
         <section id="links">
             <a id="tribute-link" href="http://ciurlionis.eu/en/" target="_blank"> www.ciurlionis.eu</a>
         </section>
-    </main>
-    <footer>
-        <div id="text"><a href="https://github.com/petajamaja"> Designed  & coded <br /> by petajamaja</a></div>
+        <div id="text"><a href="https://github.com/petajamaja"> Designed & coded <br /> by petajamaja</a></div>
     </footer>
 </body>
 

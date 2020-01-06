@@ -1,0 +1,57 @@
+body{
+    // important so that the music & art slides don't overflow
+    overflow-x: hidden; 
+}
+
+.side-panel-header {
+    display: flex;
+    justify-content: center;
+    max-height: 120px;
+    overflow: hidden;
+    align-items: center;
+    a {
+        font-size: 2.5em;
+        font-style: italic;
+        text-decoration: none;
+        color: #25515b;
+        padding: 10px;
+        border: 2px dotted #D6CDB9;
+    }
+}
+
+#art {
+    z-index: 3;
+    top:0;
+    right: -100%;
+    position: absolute;
+    background: white;
+    width: 100%;
+    -webkit-transition: all 1s, -webkit-transform 1s;
+    transition: all 1s, transform 1s;
+
+    &.visible {
+        top:0;
+        right: 0;
+        -webkit-transition: all 1s, -webkit-transform 1s;
+        transition: all 1s, transform 1s;   
+    }
+}
+
+#music {
+    z-index: 3;
+    top: 0;
+    position: absolute;
+    background: white;
+    right: 100%;
+    width : 100%;
+    -webkit-transition: all 1s, -webkit-transform 1s;
+    transition: all 1s, transform 1s;
+
+    &.visible {
+        top: 0;
+        right: 0;
+        -webkit-transition: all 1s, -webkit-transform 1s;
+        transition: all 1s, transform 1s;
+        width:100%;
+    }
+}
