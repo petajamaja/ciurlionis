@@ -4,17 +4,35 @@ require('./navbar-arrows.scss');
 require('./scrollbar-default-override.scss');
 require('./animated-sliding.scss');
 
-window.makeVisible = function makeVisible(elementId){
-    this.console.log("making " + elementId + " visible");
+let removeHash = function() { 
+    history.pushState("", document.title, 
+        window.location.pathname + window.location.search);
+}
+
+window.makeVisible = function makeVisible(elementId) {
     document.getElementById(elementId).classList.add('visible');
 }
 
-window.hide = function hide(elementId){
+window.hide = function hide(elementId) {
     document.getElementById(elementId).classList.remove('visible');
-    window.history.back(1);
+    removeHash();
 }
 
-let adjustSize = function(){
+let preventHashFocus = function () {
+    let anchors = document.getElementsByTagName("a");
+    for (let i = 0, length = anchors.length; i < length; i++) {
+        let anchor = anchors[i];
+        anchor.addEventListener('click', function () {
+            let url = this.getAttribute('href');
+            if (url && url[0] == "#") {
+                event.preventDefault();
+                history.pushState({}, '', url);
+            }
+        }, true);
+    };
+}
+
+let adjustSize = function () {
     let heightOfMain = document.getElementById('init').offsetHeight;
     let heightOfHeader = document.getElementById('header').offsetHeight;
     document.getElementById('music').style.height = heightOfMain + heightOfHeader + "px";
@@ -26,4 +44,6 @@ let adjustSize = function(){
 }
 // initial adjustment
 adjustSize();
+preventHashFocus();
+
 window.onresize = adjustSize;
