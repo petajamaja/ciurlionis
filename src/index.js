@@ -5,11 +5,13 @@ require('./scrollbar-default-override.scss');
 require('./animated-sliding.scss');
 
 window.makeVisible = function makeVisible(elementId){
+    this.console.log("making " + elementId + " visible");
     document.getElementById(elementId).classList.add('visible');
 }
 
 window.hide = function hide(elementId){
     document.getElementById(elementId).classList.remove('visible');
+    window.history.back(1);
 }
 
 let adjustSize = function(){
