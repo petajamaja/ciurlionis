@@ -5,8 +5,14 @@ require('./scrollbar-default-override.scss');
 require('./animated-sliding.scss');
 
 let removeHash = function() { 
-    history.pushState("", document.title, 
-        window.location.pathname + window.location.search);
+    if(browserSupportsHistoryAPI()) {
+        history.pushState("", document.title, 
+                window.location.pathname + window.location.search);
+    }
+}
+
+let browserSupportsHistoryAPI = function() {
+    return !!(window.history && history.pushState);
 }
 
 window.makeVisible = function makeVisible(elementId) {
@@ -23,10 +29,11 @@ let preventHashFocus = function () {
     for (let i = 0, length = anchors.length; i < length; i++) {
         let anchor = anchors[i];
         anchor.addEventListener('click', function () {
-            let url = this.getAttribute('href');
-            if (url && url[0] == "#") {
+            let link = this.getAttribute('href');
+            if (link && link[0] == "#") {
                 event.preventDefault();
-                history.pushState({}, '', url);
+                // if the API is not supported, just ignore hashes overall
+                if (browserSupportsHistoryAPI()) history.pushState({}, '', url);
             }
         }, true);
     };
