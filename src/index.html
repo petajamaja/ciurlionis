@@ -24,7 +24,8 @@
         <div class="crop">
             <img id="signature" src="../img/Signature_Teal.jpg" />
         </div>
-        <p id="slash">|</p>
+        <p id="slash" class="slash">|</p>
+        <a id="back-button" class="back-button hidden" onclick="hideAll()">Go back</a>
         <a id="arrow-music" class="arrow-music animated-arrow" href="#music" onclick="makeVisible('music');">
             <span class='the-arrow -left'>
                 <span class='shaft'></span>
@@ -163,9 +164,6 @@
                 </article>
             </div>
             <div id="music">
-                <div class="side-panel-header">
-                    <a onclick="hide('music')">Go back</a>
-                </div>
                 <div id="music-content">
                     <article>
                         <p>Lorem
@@ -197,9 +195,6 @@
                 </div>
             </div>
             <div id="art">
-                <div class="side-panel-header">
-                    <a onclick="hide('art')">Go back</a>
-                </div>
                 <div id="art-content">
                     <article>
                         <p>Lorem

@@ -80,6 +80,12 @@ body {
     }
 }
 
+// global class that means something is hidden...
+// except maybe side panels, they use 'beyond' class
+.hidden {
+    display: none;
+}
+
 .crop {
     max-height: inherit;
     overflow: hidden;
@@ -90,8 +96,17 @@ body {
     }
 }
 
-#slash {
+.slash {
     display: none;
+}
+
+.back-button {
+    font-size: 2.5em;
+    font-style: italic;
+    text-decoration: none;
+    color: #25515b;
+    padding: 10px;
+    border: 2px dotted #D6CDB9;
 }
 
 .initial {
@@ -161,10 +176,13 @@ article {
         #signature {
             display: none;
         }
-        #slash {
+        .slash {
             display: block;
             margin-left: 10px;
             margin-right: 10px;
+            &.hidden {
+                display: none;
+            }
         }
         a { 
             height: 100%;

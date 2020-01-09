@@ -4,6 +4,10 @@ require('./navbar-arrows.scss');
 require('./scrollbar-default-override.scss');
 require('./animated-sliding.scss');
 
+let browserSupportsHistoryAPI = function() {
+    return !!(window.history && history.pushState);
+}
+
 let removeHash = function() { 
     if(browserSupportsHistoryAPI()) {
         history.pushState("", document.title, 
@@ -11,17 +15,32 @@ let removeHash = function() {
     }
 }
 
-let browserSupportsHistoryAPI = function() {
-    return !!(window.history && history.pushState);
+let hideNavigationArrows = function() {
+    document.getElementById('arrow-art').classList.add('hidden');
+    document.getElementById('arrow-music').classList.add('hidden');
+    document.getElementById('slash').classList.add('hidden');
+    document.getElementById('signature').classList.add('hidden');
+    document.getElementById('back-button').classList.remove('hidden');
+}
+
+let showNavigationArrows = function() {
+    document.getElementById('arrow-art').classList.remove('hidden');
+    document.getElementById('arrow-music').classList.remove('hidden');
+    document.getElementById('slash').classList.remove('hidden');
+    document.getElementById('signature').classList.remove('hidden');
+    document.getElementById('back-button').classList.add('hidden');
 }
 
 window.makeVisible = function makeVisible(elementId) {
-    document.getElementById(elementId).classList.add('visible');
+    document.getElementById(elementId).classList.add('fronting');
+    hideNavigationArrows();
 }
 
-window.hide = function hide(elementId) {
-    document.getElementById(elementId).classList.remove('visible');
+window.hideAll = function hideAll() {
+    document.getElementById('art').classList.remove('fronting');
+    document.getElementById('music').classList.remove('fronting');
     removeHash();
+    showNavigationArrows();
 }
 
 let preventHashFocus = function () {
@@ -33,7 +52,7 @@ let preventHashFocus = function () {
             if (link && link[0] == "#") {
                 event.preventDefault();
                 // if the API is not supported, just ignore hashes overall
-                if (browserSupportsHistoryAPI()) history.pushState({}, '', url);
+                if (browserSupportsHistoryAPI()) history.pushState({}, '', link);
             }
         }, true);
     };
@@ -41,14 +60,12 @@ let preventHashFocus = function () {
 
 let adjustSize = function () {
     let heightOfMain = document.getElementById('init').offsetHeight;
-    let heightOfHeader = document.getElementById('header').offsetHeight;
-    document.getElementById('music').style.height = heightOfMain + heightOfHeader + "px";
+    document.getElementById('music').style.height = heightOfMain + "px";
     document.getElementById('music-content').style.height = heightOfMain + "px";
-    document.getElementById('art').style.height = heightOfMain + heightOfHeader + "px";
+    document.getElementById('art').style.height = heightOfMain + "px";
     document.getElementById('art-content').style.height = heightOfMain + "px";
-    document.getElementsByClassName('side-panel-header')[0].style.height = heightOfHeader + "px";
-    document.getElementsByClassName('side-panel-header')[1].style.height = heightOfHeader + "px";
 }
+
 // initial adjustment
 adjustSize();
 preventHashFocus();
