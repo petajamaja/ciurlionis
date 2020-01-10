@@ -86,14 +86,10 @@ body {
     display: none;
 }
 
-.crop {
-    max-height: inherit;
-    overflow: hidden;
-    #signature {
-      max-height: initial;
-      margin-top: -90px;
-      max-width: 30em;
-    }
+
+#signature {
+    height: 77px;
+    margin: 20px 60px 20px 50px;
 }
 
 .slash {
@@ -198,7 +194,6 @@ article {
     #signature-heading {
         display: inline-block;
         max-height: initial;
-        margin-top: -90px;
         max-width: 30em;
     }
 }
