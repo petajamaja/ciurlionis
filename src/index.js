@@ -18,7 +18,7 @@ let removeHash = function() {
 let hideNavigationArrows = function() {
     document.getElementById('arrow-art').classList.add('hidden');
     document.getElementById('arrow-music').classList.add('hidden');
-    document.getElementById('slash').classList.add('hidden');
+    document.getElementById('ampersand').classList.add('hidden');
     document.getElementById('signature').classList.add('hidden');
     document.getElementById('back-button').classList.remove('hidden');
 }
@@ -26,7 +26,7 @@ let hideNavigationArrows = function() {
 let showNavigationArrows = function() {
     document.getElementById('arrow-art').classList.remove('hidden');
     document.getElementById('arrow-music').classList.remove('hidden');
-    document.getElementById('slash').classList.remove('hidden');
+    document.getElementById('ampersand').classList.remove('hidden');
     document.getElementById('signature').classList.remove('hidden');
     document.getElementById('back-button').classList.add('hidden');
 }

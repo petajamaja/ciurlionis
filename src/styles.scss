@@ -29,6 +29,7 @@ body {
         justify-content: center;
         align-items: center;
         max-height: 120px;
+        min-height: 118px;
         overflow: hidden;
         a .text {
             height: 100%;
@@ -67,6 +68,8 @@ body {
         color: white;
         align-content: center;
         text-align: center;
+        z-index: 1;
+        position: relative;
         p {
             font-size: 15px;
         }
@@ -99,8 +102,9 @@ body {
     }
 }
 
-.slash {
+.ampersand {
     display: none;
+    color: #25515b;
 }
 
 .back-button {
@@ -179,13 +183,20 @@ article {
     header {
         #signature {
             display: none;
+            &.hidden {
+                display:none;
+            }
         }
-        .slash {
+        .ampersand {
             display: block;
             margin-left: 10px;
             margin-right: 10px;
             &.hidden {
-                display: none;
+                // needed to retain the same height of the header
+                width: 0;
+                visibility: hidden;
+                margin-left: 0;
+                margin-right: 0;
             }
         }
         a { 
