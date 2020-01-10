@@ -27,6 +27,7 @@ body {
     header {
         display: flex;
         justify-content: center;
+        align-items: center;
         max-height: 120px;
         overflow: hidden;
         a .text {
@@ -90,6 +91,12 @@ body {
 #signature {
     height: 77px;
     margin: 20px 60px 20px 50px;
+    &.hidden {
+        width: 0;
+        margin-left: 0;
+        margin-right: 0;
+        display: block;
+    }
 }
 
 .slash {
@@ -103,6 +110,7 @@ body {
     color: #25515b;
     padding: 10px;
     border: 2px dotted #D6CDB9;
+    height: 80%;
 }
 
 .initial {
