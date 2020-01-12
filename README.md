@@ -24,6 +24,7 @@ To learn more about Čiurlionis, please take a look at the official website (not
 + bundler : webpack with HMR
 + no framework, just SCSS + HTML + JS
 + usage of YouTube Player API
++ SPA with hash navigation
 
 ***
 
@@ -55,7 +56,6 @@ To learn more about Čiurlionis, please take a look at the official website (not
 
 + [Book layout](https://codepen.io/erinesullivan/pen/gxdbzp) created by [Erin E. Sullivan](https://codepen.io/erinesullivan) - I found it to be the most realistic and minimalistic skeuomorph of a book out there that fit nicely for the concept of this tribute page;
 
-
 ***
 
-**(c)@petajamaja**, last days of the second decade of the new era.
+**(c)@petajamaja**, 2020
