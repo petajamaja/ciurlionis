@@ -7,3 +7,7 @@ require('./scrollbar-default-override.scss');
 require('./animated-sliding/navbar-arrows.scss');
 require('./animated-sliding/animated-sliding.scss');
 require('./animated-sliding/animated-sliding.js');
+
+window.onGalleryModeSelect = function onGalleryModeSelect(id) {
+    this.document.getElementById(id).classList.add('selected');
+}

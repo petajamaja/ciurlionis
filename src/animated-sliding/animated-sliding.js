@@ -79,10 +79,14 @@ let hideAllSlidingPanels = function() {
 
 let adjustSlidingPanelsSize = function () {
     let heightOfMain = document.getElementById('init').offsetHeight;
-    document.getElementById('music-div').style.height = heightOfMain + "px";
-    document.getElementById('music-content').style.height = heightOfMain + "px";
-    document.getElementById('art-div').style.height = heightOfMain + "px";
-    document.getElementById('art-content').style.height = heightOfMain + "px";
+    let heightOfArt = document.getElementById('art-div').offsetHeight;
+    let heightOfMusic = document.getElementById('music-div').offsetHeight;
+    let maximumHeight = Math.max(heightOfMain, Math.max(heightOfArt,heightOfMusic));
+    document.getElementById('music-div').style.height = maximumHeight + "px";
+    document.getElementById('music-content').style.height = maximumHeight + "px";
+    document.getElementById('art-div').style.height = maximumHeight + "px";
+    document.getElementById('art-content').style.height = maximumHeight + "px";
+    document.getElementById('init').style.height = maximumHeight + "px";
 }
 
 window.onresize = adjustSlidingPanelsSize;
