@@ -10,9 +10,11 @@
     left: 100%;
     position: absolute;
     background: white;
+    min-height: auto;
     width: 100%;
     -webkit-transition: all 1s, -webkit-transform 1s;
     transition: all 1s, transform 1s;
+    height: max-content;
 
     &.fronting {
         top:0;
@@ -29,14 +31,15 @@
     background: white;
     right: 100%;
     width : 100%;
-    -webkit-transition: all 1s, -webkit-transform 1s;
-    transition: all 1s, transform 1s;
+    height: auto;
+    -webkit-transition: all 1s, max-height 0s, -webkit-transform 1s;
+    transition: all 1s, max-height 0s, transform 1s;
 
     &.fronting {
         top: 0;
         right: 0;
-        -webkit-transition: all 1s, -webkit-transform 1s;
-        transition: all 1s, transform 1s;
+        -webkit-transition: all 1s, max-height 0s, -webkit-transform 1s;
+        transition: all 1s, max-height 0s, transform 1s;
         width:100%;
     }
 }

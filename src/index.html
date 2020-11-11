@@ -3,7 +3,7 @@
 
 <head>
     <title>Mikalojus Konstantinas Čiurlionis</title>
-    <link href="https://fonts.googleapis.com/css?family=Caveat|Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Marck+Script|Gotu&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -228,7 +228,7 @@
                         <div class="player">
                             <img height="120" width="102" alt="Sonata of the Serpent - finale" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zalcio-sonata-Ct11-1024x872.jpg">
                             <iframe title="composition2" frameBorder="0" width="60%" height="120" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/203272298&color=25515B&buying=false&auto_play=false&show_artwork=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
-            </div>
+                        </div>
                         <p>Lorem
                             ipsum
                             dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -313,24 +313,153 @@
                     </article>
                     <div class="pick-gallery-mode">
                         <p>How would you like to see the gallery?</p>
-                        <div class="gallery-choices">
-                            <label class="left" for="cycles">By cycles</label>
-                            <input type="radio" id="cycles" class="choice" />
-                            <label for="colours">By colours</label>
-                            <input type="radio" id="colours" class="choice"></input>
-                        </div>
+                        <form action="" name="gallery-choices" class="gallery-choices">
+                            <input type="radio" id="cycles" name="gallery-choice" class="choice" checked/>
+                            <label for="cycles" class="selected" onclick="toggleGallery()">By cycles</label>
+                            <input type="radio" id="colours" name="gallery-choice" class="choice"></input>
+                            <label for="colours" onclick="toggleGallery()">By colours</label>
+                        </form>
                     </div>
                     <article>
-                        <div class="gallery">
-                            <div id="sonata-of-the-sun">
+                        <div class="gallery-cycles">
+                            <h2>Sonata of the sun</h2>
+                            <div id="sonata-of-the-sun" class="painting-cycle">
+                                <img alt="allegro" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Saules-sonata-Ct19-950x1024.jpg" />
+                                <img alt="andante" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Saules-sonata-Ct20-923x1024.jpg" />
+                                <img alt="scherzo" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Saules-sonata-Ct21-964x1024.jpg" />
+                                <img alt="finale" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Saules-sonata-Ct22-968x1024.jpg" />
                             </div>
-                            <div id="sonata-of-the-spring">
+                            <h2>Sonata of the Serpent</h2>
+                            <div id="sonata-of-the-serpent" class="painting-cycle">
+                                <img alt="allegro" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zalcio-sonata-Ct8-1024x881.jpg" />
+                                <img alt="andante" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zalcio-sonata-Ct9-1024x872.jpg" />
+                                <img alt="scherzo" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zalcio-sonata-Ct10-1024x870.jpg" />
+                                <img alt="finale" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zalcio-sonata-Ct11-1024x872.jpg" />
                             </div>
-                            <div id="sonata-of-the-spring">         
+                            <h2>Sonata of the Pyramids</h2>
+                            <div id="sonata-of-the-pyramids" class="painting-cycle">
+                                <img alt="allegro" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Piramidziu-sonata-Ct41-789x1024.jpg" />
+                                <img alt="andante" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Piramides-andante-be-balto-krasto.jpg" />
+                                <img alt="scherzo" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Piramidziu-sonata-Ct5-1024x787.jpg" />
                             </div>
-                            <div id="sonata-of-the-serpent">
+                            <h2>The City</h2>
+                            <div id="the-city" class="painting-cycle">
+                                <img alt="City 1" src="http://ciurlionis.eu/wp-content/uploads/2010/09/City-1-261x300.jpg" />
+                                <img alt="City 2" src="http://ciurlionis.eu/wp-content/uploads/2010/09/City-2-Ct68-249x300.jpg" />
                             </div>
-                            <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Piramidziu-sonata-Ct41-789x1024.jpg" />
+                            <h2>The Funeral Symphony</h2>
+                            <div id="the-funeral-symphony" class="painting-cycle">
+                                <img alt="Funeral Symphony (I)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct106-256x300.jpg" />
+                                <img alt="Funeral Symphony (II)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct107-300x252.jpg" />
+                                <img alt="Funeral Symphony (III)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct108-300x256.jpg" />
+                                <img alt="Funeral Symphony (IV)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct109-300x256.jpg" />
+                                <img alt="Funeral Symphony (V)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct110-864x1024.jpg" />
+                                <img alt="Funeral Symphony (VI)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct111-257x300.jpg" />
+                                <img alt="Funeral Symphony (VII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct1121-254x300.jpg" />
+                            </div>
+                            <h2>Hymn</h2>
+                            <div id="hymn" class="painting-cycle">
+                                <img alt="Hymn (I)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Himnas1-258x300.jpg" />
+                                <img alt="Hymn (II)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Hymn-II-250x300.jpg" />
+                                <img alt="Hymn (III)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Himnas-III-256x300.jpg" />
+                            </div>
+                            <h2>Creation of the World</h2>
+                            <div id="creation-of-the-world" class="painting-cycle grid">
+                                <img alt="Creation of the world (I)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct-181-872x1024.jpg" />
+                                <img alt="Creation of the world (II)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct182-862x1024.jpg" />
+                                <img alt="Creation of the world (III)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct1831-869x1024.jpg" />
+                                <img alt="Creation of the world (IV)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct184-880x1024.jpg" />
+                                <img alt="Creation of the world (V)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct185-877x1024.jpg" />
+                                <img alt="Creation of the world (VI)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct186-880x1024.jpg" />
+                                <img alt="Creation of the world (VII)" class="middle" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct187-890x1024.jpg" />
+                                <img alt="Creation of the world (VIII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct188-862x1024.jpg" />
+                                <img alt="Creation of the world (IX)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct190-854x1024.jpg" />
+                                <img alt="Creation of the world (X)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct1891-837x1024.jpg" />
+                                <img alt="Creation of the world (XI)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct191-828x1024.jpg" />
+                                <img alt="Creation of the world (XII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct1921-830x1024.jpg" />
+                                <img alt="Creation of the world (XIII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct1933-886x1024.jpg" />
+                            </div>
+                            <h2>Winter</h2>
+                                <div id="winter" class="painting-cycle">
+                                <img alt="Winter (I)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct44-879x1024.jpg" />
+                                <img alt="Winter (II)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct45-1024x890.jpg" />
+                                <img alt="Winter (III)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct461-870x1024.jpg" />
+                                <img alt="Winter (IV)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct47-875x1024.jpg" />
+                                <img alt="Winter (V)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct485-885x1024.jpg" />
+                                <img alt="Winter (VI)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct49-885x1024.jpg" />
+                                <img alt="Winter (VII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-7.jpg" />
+                                <img alt="Winter (VIII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-8.jpg" />
+                            </div>
+                            <h2>The Zodiac</h2>
+                            <div id="the-zodiac" class="painting-cycle">
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct52-880x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct53-873x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct54-883x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct55-871x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct56-877x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct57-874x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct58-869x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct59-893x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct601-882x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct61-878x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct62-885x1024.jpg" />
+                                <img src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zodiakas-Ct63-880x1024.jpg" />
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        
+                        <div class="gallery-colors hidden">
+                            <div id="blue" class="color">
+                                <img alt="Funeral Symphony (VI)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct111-257x300.jpg" />     
+                                <img alt="Creation of the world (I)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct-181-872x1024.jpg" />
+                                <img alt="Creation of the world (II)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct182-862x1024.jpg" />
+                                <img alt="Creation of the world (III)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct1831-869x1024.jpg" />
+                                <img alt="Creation of the world (IV)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct184-880x1024.jpg" />
+                                <img alt="Creation of the world (V)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct185-877x1024.jpg" />
+                                <img alt="Winter (II)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct45-1024x890.jpg" />
+                                <img alt="Winter (VI)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct49-885x1024.jpg" />
+                            </div>
+                            <div id="green" class="color">
+                                <img alt="Sonata of the Sun - allegro" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Saules-sonata-Ct19-950x1024.jpg" />
+                                <img alt="Sonata of the Sun - finale" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Saules-sonata-Ct22-968x1024.jpg" />
+                                <img alt="Sonata of the Pyramids - allegro" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Piramidziu-sonata-Ct41-789x1024.jpg" />
+                                <img alt="Sonata of the Serpent - allegro" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zalcio-sonata-Ct8-1024x881.jpg" />
+                                <img alt="Sonata of the Serpent - andante" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zalcio-sonata-Ct9-1024x872.jpg" />
+                                <img alt="Sonata of the Serpent - scherzo" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zalcio-sonata-Ct10-1024x870.jpg" />
+                                <img alt="Sonata of the Serpent - finale" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Zalcio-sonata-Ct11-1024x872.jpg" />
+                                <img alt="Winter (IV)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct47-875x1024.jpg" />
+                                <img alt="Creation of the world (XII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct1921-830x1024.jpg" />
+                                <img alt="Funeral Symphony (I)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct106-256x300.jpg" />
+                                <img alt="Funeral Symphony (III)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct108-300x256.jpg" />
+                                <img alt="Funeral Symphony (IV)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct109-300x256.jpg" />
+                                <img alt="Funeral Symphony (VII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ct1121-254x300.jpg" />
+                                <img alt="Creation of the world (IX)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct190-854x1024.jpg" />s
+                            </div>
+                            <div id="orange" class="color">
+                                <img alt="Sonata of the Sun - andante" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Saules-sonata-Ct20-923x1024.jpg" />
+                                <img alt="Sonata of the Sun - scherzo" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Saules-sonata-Ct21-964x1024.jpg" />
+                                <img alt="Hymn (II)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Hymn-II-250x300.jpg" />
+                                <img alt="Sonata of the Pyramids - andante" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Piramides-andante-be-balto-krasto.jpg" />
+                                <img alt="Sonata of the Pyramids - scherzo" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Piramidziu-sonata-Ct5-1024x787.jpg" />
+                                <img alt="Winter (I)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct44-879x1024.jpg" />
+                                <img alt="Winter (III)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct461-870x1024.jpg" />
+                                <img alt="Winter (V)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-Ct485-885x1024.jpg" />
+                                <img alt="Winter (VII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-7.jpg" />
+                                <img alt="Winter (VIII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Ziema-8.jpg" />
+                            </div>
+                            <div id="white" class="color">
+                                <img alt="City 1" src="http://ciurlionis.eu/wp-content/uploads/2010/09/City-1-261x300.jpg" />
+                                <img alt="City 2" src="http://ciurlionis.eu/wp-content/uploads/2010/09/City-2-Ct68-249x300.jpg" />
+                                <img alt="Hymn (I)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Himnas1-258x300.jpg" />
+                                <img alt="Hymn (III)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Himnas-III-256x300.jpg" />
+                                <img alt="Creation of the world (VI)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct186-880x1024.jpg" />
+                                <img alt="Creation of the world (VII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct187-890x1024.jpg" />
+                                <img alt="Creation of the world (VIII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct188-862x1024.jpg" />
+                                <img alt="Creation of the world (X)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct1891-837x1024.jpg" />
+                                <img alt="Creation of the world (XI)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct191-828x1024.jpg" />
+                                <img alt="Creation of the world (XIII)" src="http://ciurlionis.eu/wp-content/uploads/2010/09/Pasaulio-sutverimas-Ct1933-886x1024.jpg" />
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -339,7 +468,7 @@
     </main>
     <footer>
         <section id="links">
-            <a id="tribute-link" href="http://ciurlionis.eu/en/" target="_blank"> www.ciurlionis.eu</a>
+            <a rel="noopener noreferrer" id="tribute-link" href="http://ciurlionis.eu/en/" target="_blank"> www.ciurlionis.eu</a>
         </section>
         <div id="text"><a href="https://github.com/petajamaja"> Designed & coded <br /> by petajamaja</a></div>
     </footer>
