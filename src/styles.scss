@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     align-content: center;
@@ -129,6 +133,27 @@ body {
         opacity: 0;
         transition: all 0s;
     }
+}
+
+.scroll-top {
+    display: none; 
+    position: fixed; 
+    bottom: 70px;
+    right: 10px;
+    z-index: 99;
+    border: 2px  solid #D6CDB9;
+    outline: none;
+    background-color: #25515b;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 60px;
 }
 
 .initial {

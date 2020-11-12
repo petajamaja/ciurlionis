@@ -12,3 +12,7 @@ require('./animated-sliding/animated-sliding.js');
  */
  require('./art-gallery/art-gallery.js');
  require('./art-gallery/art-gallery.scss');
+ /**
+  * Button to return to the top
+  */
+ require('./up-button.js');
