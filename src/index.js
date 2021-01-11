@@ -16,3 +16,8 @@ require('./animated-sliding/animated-sliding.js');
   * Button to return to the top
   */
  require('./up-button.js');
+ /**
+  * Video background on the main page
+  */
+ require('./video-background/video-background.js');
+ require('./video-background/video-background.scss');
