@@ -116,7 +116,23 @@ function onPlayerReady(){
     player.mute();
 }
 
+function vidRescale(){
+  var w = window.innerWidth+200, h = window.innerHeight+200;
+  let video = document.getElementById('youtube-video');
+  let css = video.style; 
+  if (w/h > 16/9){
+    player.setSize(w, w/16*9);
+    css.left = '0px';
+    } else {
+      player.setSize(h/9*16, h);
+      video.left = -(video.outerWidth-w)/2 + 'px';
+  }
+}
+
 
 window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 window.onPlayerReady = onPlayerReady;
 window.onPlayerStateChange = onPlayerStateChange;
+
+window.onload = vidRescale;
+window.onresize = vidRescale;
