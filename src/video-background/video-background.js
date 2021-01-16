@@ -73,7 +73,9 @@ function setNextClip(){
 }
 
 function rewindTo(time){
+    player.pauseVideo();
     player.seekTo(time);
+    player.playVideo();
 }
   
 function onPlayerStateChange(event) {
@@ -96,7 +98,10 @@ function onPlayerStateChange(event) {
            player.stopVideo();
          }, (videoList[currentVideoId].clips[currentClipId].end - videoList[currentVideoId].clips[currentClipId].start) * 1000);
        }
-      sscale(videoList[currentVideoId].clips[currentClipId].scale);
+      scale(videoList[currentVideoId].clips[currentClipId].scale);
+    // the only time the video pauses is when we seek to a next clip
+    } else if (event.data === YT.PlayerState.PAUSED) {
+        document.getElementById('youtube-video').classList.remove('active');
     }
   }
 
