@@ -30,7 +30,7 @@ var videoList = [
         },
         {'start': 250, 
          'end': 270,
-         'scale': '2.4'
+         'scale': '1'
         }
       ]      
     }

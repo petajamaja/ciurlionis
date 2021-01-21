@@ -204,7 +204,6 @@ article {
 /* For the width of the original background image and smaller: */
 @media only screen and (max-width: 837px) {
     .background {
-      background-size: contain;
       background-position: top;
       height: 120vw;
       .cover-text {
