@@ -20,58 +20,65 @@ const playerDefaultSettings = {
 };
 
 
-var videoList = [    
+var videoList = [ 
     {
       'id': 'ftA-3uHUsrc',
       'clips': [
         {'start': 171, 
-         'end': 200,
-         'scale': '1'
-        },
-        {'start': 26,
-        'end': 35,
-        'scale': '2.5'
+        'end': 200,
+        'scale': '1'
         },
         {'start': 250, 
-         'end': 270,
-         'scale': '1'
+        'end': 270,
+        'scale': '1'
+        },
+        {'start': 316, 
+        'end': 334,
+        'scale': '1'
+        },
+        {'start': 357, 
+        'end': 374,
+        'scale': '1'
         }
       ]      
-    },
+    },   
     {
-      'id': 'TX_6web_lb8',
+      'id': '8J3KhkSvcOo',
       'clips': [
-        {'start': 24, 
-         'end': 31,
+        {'start': 16, 
+         'end': 28,
          'scale': '1.5'
         },
-        {'start': 32, 
-         'end': 59,
+        {'start': 46, 
+         'end': 64,
          'scale': '2.4'
         },
-        {'start': 84, 
-         'end': 99,
+        {'start': 81, 
+         'end': 100,
          'scale': '2.4'
         },
-        {'start': 115, 
-         'end': 150,
+        {'start': 102, 
+         'end': 106,
          'scale': '1.5'
         },
-        {'start': 115, 
-         'end': 150,
+        {'start': 116, 
+         'end': 119,
+         'scale': '1.5'
+        },
+        {'start': 137, 
+         'end': 144,
+         'scale': '2.4'
+        },
+        {'start': 145, 
+         'end': 157,
+         'scale': '1.5'
+        },
+        {'start': 158, 
+         'end': 176,
          'scale': '2.4'
         }
       ]      
     }
-    // {
-    //   'id': 'a1YUX21knEk',
-    //   'clips': [
-    //     {'start': 9, 
-    //      'end': 200,
-    //      'scale': '1.5'
-    //     }
-    //   ]      
-    // }
   ];
 var currentVideoId = 0;
 var currentClipId = 0;
