@@ -84,21 +84,52 @@ var currentVideoId = 0;
 var currentClipId = 0;
 var newVideoLoaded = false;
 
-function scale(scale){
+function scale(videoScale){
     var videoFrame =  document.getElementById('youtube-video');
     let style = videoFrame.style;
-    style.mozTransform = 'scale(' + scale + ')';
-    style.msTransform = 'scale(' + scale + ')';
-    style.oTransform = 'scale(' + scale + ')';
-    style.transform = 'scale(' + scale + ')';
+    style.mozTransform = 'scale(' + videoScale + ')';
+    style.msTransform = 'scale(' + videoScale + ')';
+    style.oTransform = 'scale(' + videoScale + ')';
+    style.transform = 'scale(' + videoScale + ')';
 }
 
 function getVideoClip(){
     return ({
       'videoId': videoList[currentVideoId].id,
       'startSeconds': videoList[currentVideoId].clips[currentClipId].start,
-      'endSeconds': videoList[currentVideoId].clips[currentClipId].end
+      'endSeconds': videoList[currentVideoId].clips[currentClipId].end,
+      'suggestedQuality': 'hd720'
     });
+}
+
+function getVideoClipStart(){
+  return videoList[currentVideoId].clips[currentClipId].start;
+}
+function getVideoClipEnd(){
+  return videoList[currentVideoId].clips[currentClipId].end;
+}
+function getVideoClipScale(){
+  return videoList[currentVideoId].clips[currentClipId].scale;
+}
+function getVideoClipLength(){
+  return (getVideoClipEnd() - getVideoClipStart()) * 1000;
+}
+function getBackgroundColor(){
+  return videoList[currentVideoId].clips[currentClipId]["color-end"];
+}
+
+function setupPause(timeout){
+  setTimeout(function(){
+    player.pauseVideo();
+    document.getElementsByClassName('youtube-background')[0].style.background = getBackgroundColor();
+  }, timeout);
+
+}
+function loadNewVideo(){
+  player.loadVideoById(getVideoClip());
+  // pause the video one second before the actual end of the clip
+  // to prevent the appearance of the loading wheel when the clip ends
+  setupPause(getVideoClipLength() - 1000);
 }
 
 function setNextClip(){
@@ -120,23 +151,21 @@ function onPlayerStateChange(event) {
     // the video is playing
     if (event.data == YT.PlayerState.PLAYING) {
       document.getElementById('youtube-video').classList.add('active');
-    // the video has been paused ( most cases ) or ended ( something unexpected, this state should never occur ) or cued
+    // the video has been paused ( most cases ) or ended/cued ( something unexpected, this state should never occur )
     } else if ( event.data == YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED || event.data == YT.PlayerState.CUED){
         document.getElementById('youtube-video').classList.remove('active');
         setNextClip();
        // if a new video needs to be loaded
        if( newVideoLoaded ){
-         player.loadVideoById(getVideoClip());
+         loadNewVideo();
          newVideoLoaded = false;
        // if it's just the next clip of the same video
        }else{
-        player.seekTo(videoList[currentVideoId].clips[currentClipId].start);
+        player.seekTo(getVideoClipStart(), true);
         player.playVideo();
-        setTimeout(function(){
-           player.pauseVideo();
-         }, (videoList[currentVideoId].clips[currentClipId].end - videoList[currentVideoId].clips[currentClipId].start) * 1000);
+        setupPause(getVideoClipLength());
        }
-      scale(videoList[currentVideoId].clips[currentClipId].scale);
+      scale(getVideoClipScale());
     }
   }
 
@@ -151,12 +180,12 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(){
-    player.loadVideoById(getVideoClip());
-    scale(videoList[0].clips[0].scale);
+    loadNewVideo();
+    scale(getVideoClipScale());
     player.mute();
 }
 
-function vidRescale(){
+function rescaleVideo(){
   var w = window.innerWidth+200, h = window.innerHeight+200;
   let video = document.getElementById('youtube-video');
   let css = video.style; 
@@ -174,5 +203,5 @@ window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 window.onPlayerReady = onPlayerReady;
 window.onPlayerStateChange = onPlayerStateChange;
 
-window.onload = vidRescale;
-window.onresize = vidRescale;
+window.onload = rescaleVideo;
+window.onresize = rescaleVideo;
