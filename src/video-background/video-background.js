@@ -3,7 +3,7 @@ var videoId = 'ftA-3uHUsrc';
 var isUnMuted = false;
 
 var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/player_api";
+tag.src = 'https://www.youtube.com/player_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -20,62 +20,54 @@ const playerDefaultSettings = {
 };
 
 
-var videoList = [ 
-    {
-      'id': 'ftA-3uHUsrc',
-      'clips': [
-        {'start': 171, 
-        'end': 200,
-        'scale': '1'
-        },
-        {'start': 250, 
-        'end': 270,
-        'scale': '1'
-        },
-        {'start': 316, 
-        'end': 334,
-        'scale': '1'
-        },
-        {'start': 357, 
-        'end': 374,
-        'scale': '1'
-        }
-      ]      
-    },   
+var videoList = [    
     {
       'id': '8J3KhkSvcOo',
       'clips': [
         {'start': 16, 
-         'end': 28,
-         'scale': '1.5'
-        },
-        {'start': 46, 
-         'end': 64,
-         'scale': '2.4'
+         'end': 30,
+         'scale': '1.5',
+         'color-end': '#C3C380'
         },
         {'start': 81, 
          'end': 100,
-         'scale': '2.4'
-        },
-        {'start': 102, 
-         'end': 106,
-         'scale': '1.5'
-        },
-        {'start': 116, 
-         'end': 119,
-         'scale': '1.5'
-        },
-        {'start': 137, 
-         'end': 144,
-         'scale': '2.4'
+         'scale': '2.4',
+         'color-end':  '#B089A1'
         },
         {'start': 145, 
          'end': 157,
-         'scale': '1.5'
+         'scale': '1.5',
+         'color-end': '#2A0D21'
         },
         {'start': 158, 
-         'end': 176,
-         'scale': '2.4'
+         'end': 191,
+         'scale': '2.4',
+         'color-end': '#CCB47C'
+        }
+      ]      
+    },
+    {
+      'id': 'ftA-3uHUsrc',
+      'clips': [
+        {'start': 171, 
+        'end': 201,
+        'scale': '1',
+        'color-end':  '#4B5356' 
+        },
+        {'start': 250, 
+        'end': 270,
+        'scale': '1',
+        'color-end': '#DEAF51' 
+        },
+        {'start': 316, 
+        'end': 334,
+        'scale': '1',
+        'color-end': '#577285'
+        },
+        {'start': 357, 
+        'end': 374,
+        'scale': '1',
+        'color-end':  '#383038'
         }
       ]      
     }
@@ -151,8 +143,12 @@ function onPlayerStateChange(event) {
     // the video is playing
     if (event.data == YT.PlayerState.PLAYING) {
       document.getElementById('youtube-video').classList.add('active');
+    }
+    else if (event.date == YT.PlayerState.BUFFERING) {
+      document.getElementById('youtube-video').classList.remove('active');
+    }
     // the video has been paused ( most cases ) or ended/cued ( something unexpected, this state should never occur )
-    } else if ( event.data == YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED || event.data == YT.PlayerState.CUED){
+    else if ( event.data == YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED || event.data == YT.PlayerState.CUED){
         document.getElementById('youtube-video').classList.remove('active');
         setNextClip();
        // if a new video needs to be loaded
