@@ -1,11 +1,8 @@
-var player;
-var videoId = 'ftA-3uHUsrc';
-var isUnMuted = false;
-
 var tag = document.createElement('script');
 tag.src = 'https://www.youtube.com/player_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var player;
 
 const playerDefaultSettings = {
     autoplay: 1, 
@@ -18,7 +15,6 @@ const playerDefaultSettings = {
     enablejsapi: 0, 
     iv_load_policy: 3,
 };
-
 
 var videoList = [    
     {
@@ -72,6 +68,7 @@ var videoList = [
       ]      
     }
   ];
+
 var currentVideoId = 0;
 var currentClipId = 0;
 var newVideoLoaded = false;
@@ -115,8 +112,8 @@ function setupPause(timeout){
     player.pauseVideo();
     document.getElementsByClassName('youtube-background')[0].style.background = getBackgroundColor();
   }, timeout);
-
 }
+
 function loadNewVideo(){
   player.loadVideoById(getVideoClip());
   // pause the video one second before the actual end of the clip
@@ -139,17 +136,25 @@ function setNextClip(){
      }
 }
 
+function showFrame(){
+  document.getElementById('youtube-video').classList.add('active');
+}
+
+function hideFrame(){
+  document.getElementById('youtube-video').classList.remove('active');
+}
+
 function onPlayerStateChange(event) {
     // the video is playing
     if (event.data == YT.PlayerState.PLAYING) {
-      document.getElementById('youtube-video').classList.add('active');
+      showFrame();
     }
     else if (event.date == YT.PlayerState.BUFFERING) {
-      document.getElementById('youtube-video').classList.remove('active');
+      hideFrame();
     }
     // the video has been paused ( most cases ) or ended/cued ( something unexpected, this state should never occur )
     else if ( event.data == YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED || event.data == YT.PlayerState.CUED){
-        document.getElementById('youtube-video').classList.remove('active');
+        hideFrame();
         setNextClip();
        // if a new video needs to be loaded
        if( newVideoLoaded ){
@@ -193,7 +198,6 @@ function rescaleVideo(){
       video.left = -(video.outerWidth-w)/2 + 'px';
   }
 }
-
 
 window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 window.onPlayerReady = onPlayerReady;
